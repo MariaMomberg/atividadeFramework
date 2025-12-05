@@ -1,30 +1,42 @@
-package revisao;
+package atividade;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Random;
+@RestController
+public class atividade {
+	
+    @GetMapping("/compras")
+    public String compras() {
+        return "Página de compras";
+    }
 
-public class AventuraDragao {
+    @GetMapping("/vendas")
+    public String vendas() {
+        return "Página de vendas";
+    }
 
-	public static void main(String[] args) {
-		int vidaJogador = 100;
-		Random random = new Random();
-		int rodada = 1;
+    @GetMapping("/estoque")
+    public String estoque() {
+        return "Página de estoque";
+    }
 
-		System.out.println("Aventura do Dragão");
-		System.out.println("Você começa com 100 de vida!");
+    @GetMapping("/users")
+    public String users() {
+        return "Página de usuários";
+    }
 
-		while (vidaJogador > 0) {
-			int dano = random.nextInt(16) + 5;
-			vidaJogador -= dano;
+    @GetMapping("/funcionarios")
+    public String funcionarios() {
+        return "Página de funcionários";
+    }
 
-			if (vidaJogador < 0) {
-				vidaJogador = 0;
-			}
+    @GetMapping("/visitantes")
+    public String visitantes() {
+        return "Página de visitantes";
+    }
 
-			System.out.println("Rodada " + rodada + " - O dragão atacou e causou " + dano + " de dano!");
-			System.out.println("Vida restante: " + vidaJogador);
-			rodada++;
-		}
-
-		System.out.println("Você foi derrotado pelo dragão!");
-	}
+    @GetMapping("/admin")
+    public String admin() {
+        return "Página do administrador";
+    }
 }
